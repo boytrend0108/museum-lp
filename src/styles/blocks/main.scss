@@ -1,0 +1,17 @@
+.main {
+  &__schedule {
+    margin-bottom: 80px;
+
+    @include on-desktop {
+      margin-bottom: 87px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 48px;
+    }
+  }
+}

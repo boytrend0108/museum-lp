@@ -1,0 +1,103 @@
+.header {
+  @include grid;
+
+  font-family: Montserrat, sans-serif;
+  grid-template-rows: min-content;
+
+  &__menu-header {
+    position: absolute;
+    top: 0;
+    left: -100%;
+  }
+
+  &__top {
+    @include background("../images/header-bg.png");
+
+    height: 300px;
+    grid-column: span 2;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      height: 384px;
+      grid-column: 4/-1;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      height: 655px;
+      grid-column: 6/-1;
+    }
+  }
+
+  &__bottom {
+    margin-bottom: 70px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1/4;
+      grid-row: 1;
+      align-self: end;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      align-self: flex-end;
+      grid-column: 1/6;
+      margin-bottom: 115px;
+
+      &-wr {
+        display: grid;
+      }
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    color: #687480;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+    padding-left: 55px;
+    transform: rotate(-90deg) translateX(100px);
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 70px;
+      background-color: #687480;
+      position: relative;
+      top: 8px;
+      left: -90px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include on-tablet {
+      font-size: 54px;
+      line-height: 120%;
+      text-align: left;
+      margin-bottom: 38px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      margin-bottom: 90px;
+    }
+  }
+}

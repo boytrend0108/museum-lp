@@ -1,0 +1,40 @@
+/* stylelint-disable scss/operator-no-unspaced */
+.top-bar {
+  @include grid;
+
+  $top-bar-height: 80px;
+  $menu-icon-heigth: 24px;
+
+  padding-block: 10px;
+
+  @include on-desktop {
+    padding-block: 15px;
+  }
+
+  &__menu {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    width: 24px;
+    height: $menu-icon-heigth;
+    background-image: url(../images/icons/icon-burger-menu.svg);
+    transition: $transition-duration;
+    position: absolute;
+    top: $top-bar-height / 2 - $menu-icon-heigth / 2;
+    left: 20px;
+
+    @include on-tablet {
+      top: 39px;
+      left: 35px;
+    }
+
+    @include on-desktop {
+      top: 39px;
+      left: 55px;
+    }
+
+    &:hover {
+      background-image: url(../images/icons/icon-burger-menu-hover.svg);
+    }
+  }
+}
